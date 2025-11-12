@@ -5,6 +5,7 @@ Platform manajemen rekrutmen modern yang dibangun dengan Next.js dan Supabase. S
 ## 🚀 Fitur
 
 ### Untuk Admin (Rekruter)
+
 - **Manajemen Lowongan**: Buat, edit, dan hapus lowongan pekerjaan
 - **Konfigurasi Form Dinamis**: Atur field aplikasi (wajib/opsional) untuk setiap lowongan
 - **Manajemen Kandidat**: Review, terima, atau tolak pelamar
@@ -12,6 +13,7 @@ Platform manajemen rekrutmen modern yang dibangun dengan Next.js dan Supabase. S
 - **Dashboard**: Overview semua lowongan dan statistik aplikasi
 
 ### Untuk Pelamar (Candidate)
+
 - **Pencarian Lowongan**: Jelajahi lowongan yang tersedia
 - **Form Aplikasi Dinamis**: Form yang menyesuaikan dengan kebutuhan lowongan
 - **Tracking Status**: Pantau status lamaran secara real-time
@@ -105,10 +107,12 @@ src/
 ## 🎯 Demo Credentials
 
 ### Admin Account
+
 - **Email**: admin@recruitment.com
 - **Password**: admin123
 
 ### Register sebagai Candidate
+
 1. Kunjungi `/register`
 2. Isi data lengkap
 3. Login dengan kredensial yang dibuat
@@ -125,6 +129,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ### Database Schema
 
 Tabel utama:
+
 - `users`: Data pengguna (admin & candidate)
 - `jobs`: Lowongan pekerjaan dengan konfigurasi field dinamis
 - `applications`: Data lamaran pelamar
@@ -132,6 +137,7 @@ Tabel utama:
 ### Key Features Implementation
 
 #### Dynamic Form Fields
+
 ```typescript
 // Example: Required fields configuration
 required_fields: {
@@ -143,14 +149,15 @@ required_fields: {
 ```
 
 #### Role-based Access Control
+
 ```typescript
 // Middleware untuk route protection
 useEffect(() => {
-  if (!user || user.role !== 'admin') {
-    router.push('/login')
-    return
+  if (!user || user.role !== "admin") {
+    router.push("/login");
+    return;
   }
-}, [user, router])
+}, [user, router]);
 ```
 
 ## 🚀 Deployment
@@ -172,23 +179,27 @@ npm start
 ## 📊 Features yang Sudah Diimplementasi
 
 ✅ **Authentication System**
+
 - Login/Logout
 - Role-based access (admin/candidate)
 - Session management
 
 ✅ **Admin Features**
+
 - CRUD Lowongan Pekerjaan
 - Konfigurasi field aplikasi dinamis
 - Manajemen kandidat (review, accept, reject)
 - Filter & search
 
 ✅ **Candidate Features**
+
 - Browse lowongan aktif
 - Form aplikasi dinamis
 - Status tracking
 - Profile management
 
 ✅ **UI/UX**
+
 - Responsive design
 - Modern UI dengan TailwindCSS
 - Smooth transitions & animations
@@ -203,39 +214,3 @@ npm start
 - [ ] Analytics dashboard
 - [ ] WebRTC untuk video interview
 - [ ] Automated resume parsing
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Authentication Error**
-   - Pastikan environment variables benar
-   - Check Supabase auth settings
-
-2. **Database Connection Error**
-   - Verify Supabase project URL & anon key
-   - Check RLS policies
-
-3. **Build Error**
-   - Pastikan semua dependencies terinstall
-   - Check TypeScript errors
-
-### Debug Mode
-
-Untuk debugging, tambahkan di browser:
-```javascript
-localStorage.setItem('debug', 'supabase:*')
-```
-
-## 📝 License
-
-MIT License - lihat file [LICENSE](LICENSE) untuk detail
-
-## 🤝 Contributing
-
-1. Fork repository
-2. Buat feature branch
-3. Commit changes
-4. Push ke branch
-5. Create Pull Request
-
