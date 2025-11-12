@@ -81,6 +81,7 @@ export default function VerifyEmailPage() {
       const isAdminEmail =
         session.user.email?.includes("admin") ||
         session.user.email?.includes("recruitment") ||
+        session.user.email?.endsWith("@recruitment.com");
 
       const userRole = isAdminEmail ? "admin" : "candidate";
 
