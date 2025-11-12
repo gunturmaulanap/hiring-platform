@@ -1,34 +1,56 @@
+# Netlify configuration for Next.js App Router with SSR
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_VERSION = "9"
 
-# Handle Next.js routing for static export
+# Handle Next.js App Router routing
 [[redirects]]
   from = "/admin/*"
-  to = "/admin/index.html"
+  to = "/.netlify/functions/server"
   status = 200
 
 [[redirects]]
   from = "/candidate/*"
-  to = "/candidate/index.html"
+  to = "/.netlify/functions/server"
   status = 200
 
 [[redirects]]
   from = "/auth/*"
-  to = "/auth/index.html"
+  to = "/.netlify/functions/server"
   status = 200
 
-# Fallback for all other routes
+[[redirects]]
+  from = "/login"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[[redirects]]
+  from = "/register"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[[redirects]]
+  from = "/profile"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server"
+  status = 200
+
+# Fallback for all other routes to Next.js server
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/server"
   status = 200
 
-# Headers for Next.js static files
+# Headers for Next.js
 [[headers]]
   for = "/_next/*"
   [headers.values]
@@ -36,5 +58,10 @@
 
 [[headers]]
   for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
