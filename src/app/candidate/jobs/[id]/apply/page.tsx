@@ -259,8 +259,8 @@ export default function ApplyJobPage() {
       }
 
       let photoUrl = null;
-      if (data.photo_file && data.photo_file instanceof File) {
-        photoUrl = await uploadPhotoToSupabase(data.photo_file);
+      if (data.photo && data.photo instanceof File) {
+        photoUrl = await uploadPhotoToSupabase(data.photo);
       }
 
       const applicationData: any = {
@@ -309,8 +309,8 @@ export default function ApplyJobPage() {
           applicationData.date_of_birth = data.date_of_birth;
         }
       }
-      if (shouldShowField("photo_file", requiredFields)) {
-        if (isFieldRequired("photo_file", requiredFields) || photoUrl) {
+      if (shouldShowField("photo", requiredFields)) {
+        if (isFieldRequired("photo", requiredFields) || photoUrl) {
           applicationData.photo_url = photoUrl;
         }
       }
@@ -391,6 +391,11 @@ export default function ApplyJobPage() {
                 name="photo"
                 render={({ field, fieldState }) => (
                   <FormItem>
+                    {fieldState.error && (
+                      <p className="text-sm text-red-600 mt-1">
+                        {fieldState.error.message}
+                      </p>
+                    )}
                     <FormLabel>
                       Photo Profile
                       {isFieldRequired("photo", requiredFields) && (
@@ -408,7 +413,7 @@ export default function ApplyJobPage() {
                             const file = e.target.files?.[0] || null;
                             field.onChange(file);
                             if (file) {
-                              handleFileChange("photo_file", file);
+                              handleFileChange("photo", file);
                             }
                           }}
                           style={{ display: "none" }}
@@ -429,11 +434,6 @@ export default function ApplyJobPage() {
                             <FaArrowUpFromBracket className="h-4 w-4 mr-2" />
                             Take a Picture
                           </Button>
-                          {fieldState.error && (
-                            <p className="text-sm text-red-600 mt-1">
-                              {fieldState.error.message}
-                            </p>
-                          )}
                         </div>
                       </div>
                     </FormControl>
