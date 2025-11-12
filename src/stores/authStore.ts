@@ -158,7 +158,7 @@ export const useAuthStore = create<AuthState>()((set, get) => ({
         const isAdminEmail =
           session.user.email?.includes("admin") ||
           session.user.email?.includes("recruitment") ||
-          session.user.email?.endsWith("@rakamin.com");
+          session.user.email?.endsWith("@recruitment.com");
 
         const userData = {
           id: session.user.id,

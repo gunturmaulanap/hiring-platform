@@ -10,11 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rakamin Recruitment Management",
+  title: "Hiring Jobseeker Platform",
   description:
     "Platform manajemen perekrutan modern untuk perusahaan dan pencari kerja",
   keywords: "recruitment, jobs, career, hiring, management",
-  authors: [{ name: "Rakamin" }],
+  authors: [{ name: "Guntur Maulana" }],
 };
 
 export const viewport: Viewport = {
@@ -34,9 +34,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <div className="min-h-screen bg-white">
-          <HydrationProvider>
-            {children}
-          </HydrationProvider>
+          <HydrationProvider>{children}</HydrationProvider>
         </div>
         <Toaster position="bottom-left" richColors closeButton />
       </body>

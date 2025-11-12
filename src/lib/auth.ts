@@ -41,31 +41,38 @@ export async function getServerUser() {
   const supabase = await createServerSupabaseClient();
 
   // Use getUser() for secure authentication
-  const { data: { user }, error } = await supabase.auth.getUser();
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser();
 
   if (error || !user) {
     return null;
   }
 
   // Simple user creation with upsert
-  const isAdminEmail = user.email?.includes('admin') ||
-                      user.email?.includes('recruitment') ||
-                      user.email?.endsWith('@rakamin.com');
+  const isAdminEmail =
+    user.email?.includes("admin") ||
+    user.email?.includes("recruitment") ||
+    user.email?.endsWith("@recruitment.com");
 
-  const userRole = isAdminEmail ? 'admin' : 'candidate';
+  const userRole = isAdminEmail ? "admin" : "candidate";
 
   const { data: userData, error: userError } = await supabase
     .from("users")
-    .upsert({
-      id: user.id,
-      email: user.email,
-      full_name: user.user_metadata?.full_name || user.email?.split('@')[0],
-      role: userRole,
-      email_confirmed_at: user.email_confirmed_at,
-      updated_at: new Date().toISOString()
-    }, {
-      onConflict: 'id'
-    })
+    .upsert(
+      {
+        id: user.id,
+        email: user.email,
+        full_name: user.user_metadata?.full_name || user.email?.split("@")[0],
+        role: userRole,
+        email_confirmed_at: user.email_confirmed_at,
+        updated_at: new Date().toISOString(),
+      },
+      {
+        onConflict: "id",
+      }
+    )
     .select()
     .single();
 
@@ -76,7 +83,10 @@ export async function requireAuth() {
   const supabase = await createServerSupabaseClient();
 
   // Use getUser() for secure authentication
-  const { data: { user }, error } = await supabase.auth.getUser();
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser();
 
   if (error || !user) {
     throw new Error("Unauthorized: Authentication required");

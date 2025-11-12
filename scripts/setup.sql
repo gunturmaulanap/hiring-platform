@@ -91,6 +91,6 @@ GRANT SELECT ON public.applications TO anon;
 
 -- 1. Masuk ke authenticated
 -- 2. Create users
--- 3. Buat dengan email admin@rakamin.com, passwordnya password123 atau bebas
+-- 3. Buat dengan email admin@recruitment.com, passwordnya password123 atau bebas
 -- 4. masuk ke tabel editors
--- 5. Tambahkan admin@rakamin.com ke role admin dan sesuaikan uuidnya dengan yang sudah dibuat di users yang berada di authenticated
+-- 5. Tambahkan admin@recruitment.com ke role admin dan sesuaikan uuidnya dengan yang sudah dibuat di users yang berada di authenticated

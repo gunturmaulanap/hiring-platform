@@ -1,4 +1,4 @@
-# Rakamin Recruitment Management System
+# Hiring Jobseeker Platform
 
 Platform manajemen rekrutmen modern yang dibangun dengan Next.js dan Supabase. Sistem ini memungkinkan admin untuk mengelola lowongan pekerjaan dan kandidat untuk melamar pekerjaan dengan form aplikasi dinamis.
 
@@ -239,12 +239,3 @@ MIT License - lihat file [LICENSE](LICENSE) untuk detail
 4. Push ke branch
 5. Create Pull Request
 
-## 📞 Support
-
-Untuk pertanyaan atau support, hubungi:
-- Email: support@rakamin.com
-- Documentation: [Wiki](https://github.com/rakamin/recruitment-system/wiki)
-
----
-
-© 2024 Rakamin Recruitment Management System
