@@ -319,7 +319,6 @@ export default function PasswordLoginPageClient() {
                   >
                     Lupa kata sandi?
                   </a>
-                  <span className="text-gray-400">|</span>
                 </div>
               </div>
 
