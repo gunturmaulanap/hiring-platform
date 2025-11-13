@@ -39,8 +39,8 @@ Platform manajemen rekrutmen modern yang dibangun dengan Next.js dan Supabase. S
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
-cd recruitment-management
+git clone <https://github.com/gunturmaulanap/hiring-platform.git>
+cd https://github.com/gunturmaulanap/hiring-platform.git
 ```
 
 ### 2. Install Dependencies

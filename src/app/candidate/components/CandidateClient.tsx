@@ -242,7 +242,7 @@ export default function CandidateClient() {
                           src="/icon/location.svg"
                           alt="Location Icon"
                           width={16}
-                          height={16}
+                        height={16}
                           style={{ width: "auto", height: "auto" }}
                         />
                         <p className="font-medium text-sm text-gray-500">
