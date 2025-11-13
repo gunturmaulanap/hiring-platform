@@ -12,6 +12,7 @@ import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FcGoogle } from "react-icons/fc";
+import { HiOutlineKey } from "react-icons/hi";
 
 import {
   Form,
@@ -246,18 +247,18 @@ export default function MagicLoginPageClient() {
               <div className="space-y-3">
                 <Link
                   href="/login/password"
-                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-700 py-2 px-4 rounded-md h-11 hover:bg-gray-100"
+                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-900 font-semibold text-md py-2 px-4 rounded-md h-11 hover:bg-gray-100"
                 >
-                  <Mail className="h-4 w-4 text-gray-600" />
+                  <HiOutlineKey className="h-5 w-5 text-gray-900 font-semibold" />
                   Masuk dengan kata sandi
                 </Link>
 
                 <Button
                   type="button"
-                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-700 py-2 px-4 rounded-md h-11 hover:bg-gray-100"
+                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-900 text-md font-semibold py-2 px-4 rounded-md h-11 hover:bg-gray-100"
                 >
                   {/* Full-color Google G */}
-                  <FcGoogle className="h-4 w-4 text-gray-600" />
+                  <FcGoogle className="h-6 w-6 text-gray-900 font-semibold" />
                   Masuk dengan Google
                 </Button>
               </div>

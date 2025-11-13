@@ -343,17 +343,17 @@ export default function PasswordLoginPageClient() {
               <div className="space-y-3">
                 <Link
                   href="/login"
-                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-900 py-2 px-4 rounded-md h-11 hover:bg-gray-50"
+                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-900 py-2 px-4 rounded-md h-11 font-semibold hover:bg-gray-50 text-md"
                 >
-                  <Mail className="h-4 w-4 text-gray-800" />
-                  Kirim link melalui email
+                  <Mail className="h-5 w-5 text-gray-900 font-semibold" />
+                  Kirim link login melalui email
                 </Link>
 
                 <Button
                   type="button"
-                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-700 py-2 px-4 rounded-md h-11 hover:bg-gray-100"
+                  className="w-full inline-flex items-center justify-center gap-2 border border-gray-200 bg-white text-gray-900 py-2 px-4 rounded-md h-11 hover:bg-gray-100 font-semibold text-md"
                 >
-                  <FcGoogle className="h-4 w-4 text-gray-600" />
+                  <FcGoogle className="h-6 w-6 text-gray-900 font-semibold " />
                   Masuk dengan Google
                 </Button>
               </div>
